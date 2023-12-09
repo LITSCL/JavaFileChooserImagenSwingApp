@@ -68,16 +68,16 @@ public class StartFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser archivo = new JFileChooser();
 				FileNameExtensionFilter filtro = new FileNameExtensionFilter("Formatos de Imagen (*.PNG,*.JPG,*.JPEG)", "png", "jpg", "jpeg");
-				archivo.addChoosableFileFilter(filtro); //Se le añade el filtro al JFileChooser (Para que al usuario se le sea mas fácil buscar una imagen).
+				archivo.addChoosableFileFilter(filtro); //Se le aÃ±ade el filtro al JFileChooser (Para que al usuario se le sea mas fÃ¡cil buscar una imagen).
 				archivo.setDialogTitle("Busque la imagen");
-				int ventana = archivo.showOpenDialog(null); //Esta instrucción habre la ventana que permite seleccionar el archivo.
-				if (ventana == JFileChooser.APPROVE_OPTION) { //Aca se esta consultando si el usuario le dio click al boton "Abrir" (En el caso de que lo haya hecho se ejecuta el código).
-					File fi = archivo.getSelectedFile(); //Esta instrucción contiene la ruta del archivo.
-					textImagenSeleccionada.setText(String.valueOf(fi)); //Se modifica el texto con la ruta seleccionada (También se puede utilizar el toString para refindir el dato).
+				int ventana = archivo.showOpenDialog(null); //Esta instrucciÃ³n habre la ventana que permite seleccionar el archivo.
+				if (ventana == JFileChooser.APPROVE_OPTION) { //Aca se esta consultando si el usuario le dio click al boton "Abrir" (En el caso de que lo haya hecho se ejecuta el cÃ³digo).
+					File fi = archivo.getSelectedFile(); //Esta instrucciÃ³n contiene la ruta del archivo.
+					textImagenSeleccionada.setText(String.valueOf(fi)); //Se modifica el texto con la ruta seleccionada (TambiÃ©n se puede utilizar el toString para refindir el dato).
 					
 					Image imagen = getToolkit().getImage(textImagenSeleccionada.getText());
-					imagen = imagen.getScaledInstance(140, 140, Image.SCALE_DEFAULT); //Se establece el tamaño de la imagen (Deben ser las mismas dimensiones que el label).
-					lblVisualizacionImagenSeleccionada.setIcon(new ImageIcon(imagen)); //Se añade la imagen al label para que se muestre.
+					imagen = imagen.getScaledInstance(140, 140, Image.SCALE_DEFAULT); //Se establece el tamaÃ±o de la imagen (Deben ser las mismas dimensiones que el label).
+					lblVisualizacionImagenSeleccionada.setIcon(new ImageIcon(imagen)); //Se aÃ±ade la imagen al label para que se muestre.
 				}
 			}
 		});
